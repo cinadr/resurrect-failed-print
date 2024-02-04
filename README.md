@@ -57,7 +57,10 @@ G11                                 ;Unretract -> This will oose some filament b
 - **Move your head** in X-Y plane to a position where you will be able **to purge** some filament after heating up your nozzle. Use your klipper user interface to do that (Fluidd or Klipperscreen) - you cannot move head by hand as it is homed already. You need to do this with *cold extruder* as hitting your top layer will be melted with a hot one. If you find that your Z height is too low or too high you can restart Z leveling by stopping your motors (M84) and restart from the line after uploading your gcode above.
 - **Set your nozzle temp** on UI to the printing temperature. Wait for heat up.
 - **Purge** some filament while not above your print. Remove the purged filament from nozzle with a tweezers.
-- Now **start printing**. 
+
+## Start printing
+
+- **Start the print**.
 - **Adjust Z offset** from UI to perfect layer adhesion if you made a mistake setting manual Z level before. **Tip:** You can use SET_GCODE_OFFSET Z_ADJUST=+-0.01 MOVE=1 on console but it is really slow. **Note:** If you have a nozzle camera you can watch your printing closely. I found useful to *lower speed to 50-70%* to be able to visualize (M220 S50). You can set 100% again if finished (M220 S100).
 - You can set idle timeout to default now (10 minutes). **SET_IDLE_TIMEOUT TIMEOUT=600**
 
