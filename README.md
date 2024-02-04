@@ -26,8 +26,8 @@ This is where you can take a deep breath and calm down. Proceed after you can re
 - **Scroll up 1-5 lines** above from this command that you want to start to print. You will erase code from here to top, but *do not erase now!* **Note:** You can calculate the last movement which contains the position at line *Requested toolhead position at shutdown time* but it needs some trigonometry. I usually I do not bother with this.
 - Search more up from here to get the last **G0/G1 Z** command to get last **Z** position. This might be different from shutdown time Z. Use whichever you want. I found it *more precise to use this one*.
 - From the previous position now **erase gcode up to PRINT_START line (included)**. **Note:** You need to remove PRINT_START to avoid homing, bed_mesh calibrate, KAMP runs, etc. These are already done at the very start of your failed print. We need to perform homing and temp settings only. See below.
-- I usually **leave EXCLUDE_OBJECT_DEFINE and all above** (thumbnail code, etc) intact. (???? This might help with keeping one gcode file (overwrite) on printer. ????)
-- **Enter** manually your **heating and Z position** parameters inside the gcode. You can get help from your PRINT_START macro. Use gcode below, edit xxxx for your needs:
+- I usually **leave EXCLUDE_OBJECT_DEFINE and all above** (thumbnail code, etc) intact. (??? This might help with keeping one gcode file (overwrite) on printer. ???)
+- **Enter** manually your **heating and Z position** parameters inside the gcode. **Note:** You need [force_move] **enable_force_move: True** inside your printer.cfg to be able to use SET_KINEMATIC_POSITION in the gcode below. You can get help from your PRINT_START macro. Use the folloing gcode, edit xxxx for your needs. (??? Use console to enter gcode then print ???)
 
 ```G-code
 RESPOND MSG="Heating up bed
